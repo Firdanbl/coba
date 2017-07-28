@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Laravel</title>
-</head>
-<body>
+@extends('layouts.master')
+@section('isi')
+		<h1>Halo</h1>
 
-Belajar Laravel
+	Selamat datang di web App saya<br>
+	Laravel, emang keren;
 
-</body>
-</html>
+@endsection

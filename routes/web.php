@@ -15,11 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/about', function(){
-	return '<h1>Halo</h1>'
-	.'Selamat datang di web App saya<br>'
-	.'Laravel, emang keren.';
-});
+
 
 Route::get('latihan', function(){
 	return view('about');
@@ -51,3 +47,54 @@ Route::get('/about/{nama}', function($j){
 	return 'Ini halaman About ' .$j.'' ;
 });
 
+Route::get('testmodel', function(){
+	$a = App\post::all();
+	return $a;
+});
+
+
+
+Route::get('testmodel1', function(){
+	$a = App\post::find(1);
+	return $a;
+});
+
+
+Route::get('testmodel2', function(){
+	$a = App\post::where('title','like','%ciri keluarga sakinah%')->get();
+	return $a;
+});
+
+
+Route::get('testmodel3',function(){
+	$post=App\post::find(1);
+	$post->title = "Ciri keluarga sakinah";
+	$post->save();
+	return $post;
+
+});
+
+
+
+Route::get('testmodel4', function(){
+	$post = App\post::find(1);
+	$post->delete();
+});
+
+Route::get('testmodel5', function(){
+	$post = new App\post;
+	$post->title="7 Amalan Pembuka Jodoh";
+	$post->content="shalat malam, sedekah, puasa sunnah, silatuhrami, senyum, doa, tobat";
+	$post->save();
+	return $post;
+	
+});
+
+Route::get('/about',function(){
+	return view('about');
+});
+
+
+Route::get('cektampilan',function(){
+	return view('layouts.master');
+});
