@@ -100,7 +100,7 @@ Route::get('cektampilan',function(){
 });
 
 
-Route::get('/orangtua', function(){
+/*Route::get('/orangtua', function(){
 	$ortu = App\orangtua::all();
 	foreach ($ortu as $key) {
 		echo $key->nama_ayah;
@@ -112,9 +112,11 @@ Route::get('/orangtua', function(){
 			echo "<hr>";
 		}
 	}
-});
+});*/
 
 Route::get('/coba1', "mycontroller@index");
 Route::get('/coba2', "mycontroller@tampilmodel");
 Route::get('/coba3', "mycontroller@tampilview");
 Route::get('/coba4', "mycontroller@percobaan");
+
+Route::resource('orangtua','orangtuacontroller');
